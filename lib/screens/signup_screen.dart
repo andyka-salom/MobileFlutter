@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'login_screen.dart';
+import 'package:talentproject/widgets/customloginform.dart'; 
+import 'package:talentproject/widgets/buttonlogin.dart'; 
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({Key? key}) : super(key: key);
@@ -9,9 +11,9 @@ class SignupScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
 
-    // Menyesuaikan padding dengan proporsi layar
+
     final double topPadding = screenSize.height * 0.1;
-    final double horizontalPadding = screenSize.width * 0.1;
+    final double horizontalPadding = screenSize.width * 0.040;
 
     return Scaffold(
       body: Container(
@@ -36,55 +38,22 @@ class SignupScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
                 SizedBox(height: 20),
-                TextFormField(
-                  decoration: InputDecoration(
-                    hintText: 'Username',
-                    fillColor: Colors.white,
-                    filled: true,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                    contentPadding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
-                  ),
+                CustomLoginForm( 
+                  hintText: 'Username',
                 ),
                 SizedBox(height: 20),
-                TextFormField(
-                  decoration: InputDecoration(
-                    hintText: 'Email',
-                    fillColor: Colors.white,
-                    filled: true,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                    contentPadding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
-                  ),
+                CustomLoginForm( 
+                  hintText: 'Email',
                 ),
                 SizedBox(height: 20),
-                TextFormField(
+                CustomLoginForm( 
+                  hintText: 'Password',
                   obscureText: true,
-                  decoration: InputDecoration(
-                    hintText: 'Password',
-                    fillColor: Colors.white,
-                    filled: true,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                    contentPadding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
-                  ),
                 ),
                 SizedBox(height: 20),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.blue.shade900,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                    ),
-                    child: Text('Signup'),
-                  ),
+                ButtonLogin( 
+                  text: 'Signup',
+                  onPressed: () {},
                 ),
                 SizedBox(height: 10),
                 GestureDetector(

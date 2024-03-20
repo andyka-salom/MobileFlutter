@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'login_screen.dart'; // Import file login_screen.dart
+import 'login_screen.dart';
+import 'package:talentproject/widgets/button.dart'; 
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key});
@@ -52,21 +53,14 @@ class SplashScreen extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 5),
-                      child: ElevatedButton(
+                      child: CustomButton(
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => LoginScreen()), // Mengarahkan ke LoginScreen
+                            MaterialPageRoute(builder: (context) => LoginScreen()), 
                           );
                         },
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.blue.shade900,
-                          minimumSize: Size(MediaQuery.of(context).size.width * 0.8, 50),
-                        ),
-                        child: Text(
-                          'Get Started',
-                          style: TextStyle(fontSize: 15, color: Colors.white),
-                        ),
+                        text: 'Get Started', // Pass the text
                       ),
                     ),
                     Padding(
@@ -82,22 +76,6 @@ class SplashScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-// LoginPage widget definition goes here
-class LoginPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // Build your login page UI here
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Login'),
-      ),
-      body: Center(
-        child: Text('Login Page'),
       ),
     );
   }

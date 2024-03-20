@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'signup_screen.dart';
+import 'package:talentproject/widgets/customloginform.dart'; 
+import 'package:talentproject/widgets/buttonlogin.dart'; 
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -19,7 +21,7 @@ class LoginScreen extends StatelessWidget {
           child: SafeArea(
             child: Padding(
               padding: EdgeInsets.only(
-                top: 120.0,
+                top: 160.0,
                 left: 20.0,
                 right: 20.0,
                 bottom: 20.0,
@@ -33,47 +35,18 @@ class LoginScreen extends StatelessWidget {
                     color: Colors.white,
                   ),
                   SizedBox(height: 30),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'Username',
-                      fillColor: Colors.white,
-                      filled: true,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                      contentPadding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
-                    ),
+                  CustomLoginForm( 
+                    hintText: 'Username',
                   ),
                   SizedBox(height: 20),
-                  TextFormField(
+                  CustomLoginForm( 
+                    hintText: 'Password',
                     obscureText: true,
-                    decoration: InputDecoration(
-                      hintText: 'Password',
-                      fillColor: Colors.white,
-                      filled: true,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                      suffixIcon: IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.visibility),
-                      ),
-                      contentPadding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
-                    ),
                   ),
                   SizedBox(height: 20),
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.blue.shade900,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                      ),
-                      child: Text('Login'),
-                    ),
+                  ButtonLogin( 
+                    text: 'Login',
+                    onPressed: () {},
                   ),
                   SizedBox(height: 10),
                   GestureDetector(
